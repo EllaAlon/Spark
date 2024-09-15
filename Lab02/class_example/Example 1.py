@@ -11,9 +11,9 @@ change columns:
 from pyspark.sql import SparkSession
 spark = SparkSession.builder\
   .getOrCreate()
-# Read a csv file
+# Read a csv file ll
 
-dessert = spark.read.csv(r"dessert.csv",header=True, inferSchema=True)\
+dessert = spark.read.csv(r"/home/developer/projects/spark-course-python/Spark/Lab02/class_example/dessert.csv",header=True, inferSchema=True)\
   .drop('id')\
   .withColumnRenamed('day.of.week', 'weekday') \
   .withColumnRenamed('num.of.guests', 'num_of_guests')\
