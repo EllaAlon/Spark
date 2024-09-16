@@ -24,7 +24,7 @@ unmatched_flights_raw = flights_raw_distinct_df.subtract(matched_df) \
 
 unmatched_df = unmatched_flights.union(unmatched_flights_raw)
 
-matched_df.write.parquet('hdfs://course-hdfs:8020/data/stg/flight_matched/', mode='overwrite')
-unmatched_df.write.parquet('hdfs://course-hdfs:8020/data/stg/flight_unmatched/', mode='overwrite')
+matched_df.write.parquet('s3a://spark/data/stg/flight_matched/', mode='overwrite')
+unmatched_df.write.parquet('s3a://spark/data/stg/flight_unmatched/', mode='overwrite')
 
 spark.stop()
